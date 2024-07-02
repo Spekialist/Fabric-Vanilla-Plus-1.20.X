@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "cracked_diorite_bricks",
+  "ingredient": {
+    "item": "vanillaplus:diorite_bricks"
+  },
+  "result": "vanillaplus:cracked_diorite_bricks"
+}

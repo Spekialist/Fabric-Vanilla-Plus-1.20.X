@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "pine_button",
+  "ingredients": [
+    {
+      "item": "vanillaplus:pine_planks"
+    }
+  ],
+  "result": {
+    "item": "vanillaplus:pine_button"
+  }
+}

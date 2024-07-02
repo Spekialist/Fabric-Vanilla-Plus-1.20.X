@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "vanillaplus:soundpoi",
+      "required": false
+    }
+  ]
+}

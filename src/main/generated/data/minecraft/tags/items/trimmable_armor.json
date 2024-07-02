@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vanillaplus:steel_helmet",
+    "vanillaplus:steel_chestplate",
+    "vanillaplus:steel_leggings",
+    "vanillaplus:steel_boots"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "vanillaplus:calcite_wall",
+    "vanillaplus:diorite_brick_wall",
+    "vanillaplus:mossy_diorite_brick_wall",
+    "vanillaplus:andesite_brick_wall",
+    "vanillaplus:mossy_andesite_brick_wall",
+    "vanillaplus:granite_brick_wall",
+    "vanillaplus:mossy_granite_brick_wall"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "vanillaplus:improved_smelting",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    }
+  ],
+  "output": {
+    "item": "minecraft:diamond"
+  }
+}

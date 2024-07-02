@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cooked_bacon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vanillaplus:cooked_bacon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_fried_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vanillaplus:fried_egg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:bacon_and_eggs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cooked_bacon",
+      "has_fried_egg"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:bacon_and_eggs"
+    ]
+  },
+  "sends_telemetry_event": false
+}

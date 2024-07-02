@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "vanillaplus:block/mossy_granite_bricks",
+    "side": "vanillaplus:block/mossy_granite_bricks",
+    "top": "vanillaplus:block/mossy_granite_bricks"
+  }
+}

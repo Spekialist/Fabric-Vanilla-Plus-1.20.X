@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "vanillaplus:block/polished_dacite_top",
+    "side": "vanillaplus:block/polished_dacite_side"
+  }
+}

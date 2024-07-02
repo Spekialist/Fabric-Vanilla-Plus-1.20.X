@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bowl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cabbage_leaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vanillaplus:cabbage_leaf"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cooked_salmon_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vanillaplus:cooked_salmon_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sweet_berries": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:sweet_berries"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:grilled_salmon"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cooked_salmon_slice",
+      "has_sweet_berries",
+      "has_cabbage_leaf",
+      "has_bowl"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:grilled_salmon"
+    ]
+  },
+  "sends_telemetry_event": false
+}

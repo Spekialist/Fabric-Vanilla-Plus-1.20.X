@@ -1,0 +1,9 @@
+// 1.20.2	2024-07-02T16:00:47.0304358	Vanilla Plus/Tags for minecraft:block
+88efd7acf5dd69c8e5157997239168cae923b89f data\minecraft\tags\blocks\fences.json
+9ef7d10b6bb50f3141b118796d7f806d8436f1aa data\minecraft\tags\blocks\walls.json
+cd3ef894717a6a127c0bcc7e62ecfcbd7a8001b8 data\minecraft\tags\blocks\logs_that_burn.json
+66319889d643cfa3ad490bc977dc939242407739 data\minecraft\tags\blocks\planks.json
+a1003371cea1b12282920f18025e64ed2457ca58 data\minecraft\tags\blocks\mineable\pickaxe.json
+b02cf14a1c4585bc0eaeabad7e4287a374c94f5f data\minecraft\tags\blocks\needs_iron_tool.json
+824e26ff271deed99788a9403b1779771552bcdd data\minecraft\tags\blocks\fence_gates.json
+b9046e3d1ef472576eca873e6504279c767c7a48 data\minecraft\tags\blocks\mineable\axe.json

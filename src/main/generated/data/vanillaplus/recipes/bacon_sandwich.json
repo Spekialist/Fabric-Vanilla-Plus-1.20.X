@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "vanillaplus:tomato"
+    },
+    "%": {
+      "item": "vanillaplus:cabbage_leaf"
+    },
+    "B": {
+      "item": "vanillaplus:cooked_bacon"
+    },
+    "X": {
+      "item": "minecraft:bread"
+    }
+  },
+  "pattern": [
+    " X ",
+    "#B%",
+    " X "
+  ],
+  "result": {
+    "item": "vanillaplus:bacon_sandwich"
+  },
+  "show_notification": true
+}

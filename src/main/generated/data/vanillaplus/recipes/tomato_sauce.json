@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vanillaplus:tomato"
+    },
+    {
+      "item": "vanillaplus:tomato"
+    },
+    {
+      "item": "vanillaplus:tomato"
+    },
+    {
+      "item": "vanillaplus:tomato"
+    },
+    {
+      "item": "vanillaplus:tomato"
+    },
+    {
+      "item": "vanillaplus:tomato"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "vanillaplus:tomato_sauce"
+  }
+}

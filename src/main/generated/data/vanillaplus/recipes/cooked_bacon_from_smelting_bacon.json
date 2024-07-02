@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "group": "bacon",
+  "ingredient": {
+    "item": "vanillaplus:bacon"
+  },
+  "result": "vanillaplus:cooked_bacon"
+}

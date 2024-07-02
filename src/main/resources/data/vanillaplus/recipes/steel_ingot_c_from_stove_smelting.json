@@ -1,0 +1,14 @@
+{
+  "type": "vanillaplus:stove_smelting",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "output": {
+    "item": "vanillaplus:steel_ingot"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "pine_planks",
+  "ingredients": [
+    {
+      "item": "vanillaplus:stripped_pine_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "vanillaplus:pine_planks"
+  }
+}

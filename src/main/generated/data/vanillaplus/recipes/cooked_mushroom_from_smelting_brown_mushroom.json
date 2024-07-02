@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "group": "mushroom",
+  "ingredient": {
+    "item": "minecraft:brown_mushroom"
+  },
+  "result": "vanillaplus:cooked_mushroom"
+}

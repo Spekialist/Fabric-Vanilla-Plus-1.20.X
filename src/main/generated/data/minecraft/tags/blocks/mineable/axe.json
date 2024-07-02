@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "vanillaplus:pine_planks",
+    "vanillaplus:pine_stairs",
+    "vanillaplus:pine_slab",
+    "vanillaplus:pine_button",
+    "vanillaplus:pine_fence",
+    "vanillaplus:pine_fence_gate",
+    "vanillaplus:pine_door",
+    "vanillaplus:pine_trapdoor",
+    "vanillaplus:pine_pressure_plate",
+    "vanillaplus:pine_sign",
+    "vanillaplus:pine_wall_sign",
+    "vanillaplus:pine_hanging_sign",
+    "vanillaplus:pine_wall_hanging_sign"
+  ]
+}

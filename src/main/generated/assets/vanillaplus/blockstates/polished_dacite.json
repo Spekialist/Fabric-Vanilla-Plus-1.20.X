@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "vanillaplus:block/polished_dacite",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "vanillaplus:block/polished_dacite"
+    },
+    "axis=z": {
+      "model": "vanillaplus:block/polished_dacite",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "vanillaplus:block/dacite",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "vanillaplus:block/dacite"
+    },
+    "axis=z": {
+      "model": "vanillaplus:block/dacite",
+      "x": 90
+    }
+  }
+}

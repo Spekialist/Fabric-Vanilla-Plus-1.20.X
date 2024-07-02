@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vanillaplus:cooked_bacon"
+    },
+    {
+      "item": "vanillaplus:cooked_bacon"
+    },
+    {
+      "item": "vanillaplus:fried_egg"
+    },
+    {
+      "item": "vanillaplus:fried_egg"
+    }
+  ],
+  "result": {
+    "item": "vanillaplus:bacon_and_eggs"
+  }
+}

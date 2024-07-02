@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "minecraft:cooked_chicken"
+    },
+    {
+      "item": "vanillaplus:tomato"
+    },
+    {
+      "item": "vanillaplus:onion"
+    }
+  ],
+  "result": {
+    "item": "vanillaplus:barbecue_stick"
+  }
+}
