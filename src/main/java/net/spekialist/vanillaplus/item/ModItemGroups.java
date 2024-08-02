@@ -209,6 +209,8 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.PINE_SIGN)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.IMPROVED_SMELTER);
                         entries.add(ModBlocks.STOVE);
+                        entries.add(ModBlocks.MYTHRIL_BLASTER);
+                        entries.add(ModBlocks.SMALL_CHEST);
                         entries.add(ModItems.PINE_SIGN);
                         entries.add(ModItems.HANGING_PINE_SIGN);
 

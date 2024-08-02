@@ -16,10 +16,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.spekialist.vanillaplus.VanillaPlus;
-import net.spekialist.vanillaplus.block.custom.CornCropBlock;
-import net.spekialist.vanillaplus.block.custom.ImprovedSmelterBlock;
-import net.spekialist.vanillaplus.block.custom.StoveBlock;
-import net.spekialist.vanillaplus.block.custom.TomatoCropBlock;
+import net.spekialist.vanillaplus.block.custom.*;
 import net.spekialist.vanillaplus.world.tree.PineSaplingGenerator;
 
 public class ModBlocks {
@@ -138,6 +135,12 @@ public class ModBlocks {
             new ImprovedSmelterBlock(FabricBlockSettings.copyOf(Blocks.BIRCH_PLANKS).nonOpaque()));
     public static final Block STOVE = registerBlock("stove",
             new StoveBlock(FabricBlockSettings.copyOf(Blocks.FURNACE)));
+
+    public static final Block MYTHRIL_BLASTER = registerBlock("mythril_blaster",
+            new MythrilBlasterBlock(FabricBlockSettings.create().nonOpaque()));
+
+    public static final Block SMALL_CHEST = registerBlock("small_chest",
+            new SmallChestBlock(FabricBlockSettings.create().nonOpaque()));
 
     public static final Block PINE_SAPLING = registerBlock("pine_sapling",
             new SaplingBlock(new PineSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));

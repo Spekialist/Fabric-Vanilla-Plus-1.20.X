@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "vanillaplus:block/small_chest"
+    },
+    "facing=east": {
+      "model": "vanillaplus:block/small_chest",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vanillaplus:block/small_chest",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vanillaplus:block/small_chest",
+      "y": 270
+    }
+  }
+}

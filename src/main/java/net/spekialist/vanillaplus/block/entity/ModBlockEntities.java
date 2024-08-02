@@ -19,6 +19,11 @@ public class ModBlockEntities {
                     FabricBlockEntityTypeBuilder.create(StoveBlockEntity::new,
                             ModBlocks.STOVE).build());
 
+    public static final BlockEntityType<SmallChestBlockEntity> SMALL_CHEST_BLOCK_ENTITY =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(VanillaPlus.MOD_ID, "small_chest_be"),
+                    FabricBlockEntityTypeBuilder.create(SmallChestBlockEntity::new,
+                            ModBlocks.SMALL_CHEST).build());
+
     public static void registerBlockEntities() {
         VanillaPlus.LOGGER.info("Registering Block Entities for " + VanillaPlus.MOD_ID);
     }

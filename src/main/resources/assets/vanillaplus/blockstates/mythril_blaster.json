@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "vanillaplus:block/mythril_blaster"
+    },
+    "facing=east": {
+      "model": "vanillaplus:block/mythril_blaster",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vanillaplus:block/mythril_blaster",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vanillaplus:block/mythril_blaster",
+      "y": 270
+    }
+  }
+}
