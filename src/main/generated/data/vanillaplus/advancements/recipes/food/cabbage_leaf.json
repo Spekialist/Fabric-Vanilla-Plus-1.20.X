@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diorite_bricks": {
+    "has_cabbage": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vanillaplus:diorite_bricks"
+              "vanillaplus:cabbage"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cracked_diorite_bricks_from_smelting_diorite_bricks"
+        "recipe": "minecraft:cabbage_leaf"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_diorite_bricks"
+      "has_cabbage"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cracked_diorite_bricks_from_smelting_diorite_bricks"
+      "minecraft:cabbage_leaf"
     ]
   },
   "sends_telemetry_event": false

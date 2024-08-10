@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vanillaplus:cabbage"
+    }
+  ],
+  "result": {
+    "count": 7,
+    "item": "vanillaplus:cabbage_leaf"
+  }
+}

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_brown_mushroom": {
+    "has_steel_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:brown_mushroom"
+              "vanillaplus:steel_ingot"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooked_mushroom_from_smelting_brown_mushroom"
+        "recipe": "minecraft:steel_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_brown_mushroom"
+      "has_steel_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooked_mushroom_from_smelting_brown_mushroom"
+      "minecraft:steel_helmet"
     ]
   },
   "sends_telemetry_event": false

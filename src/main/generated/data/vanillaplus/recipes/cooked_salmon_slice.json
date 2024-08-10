@@ -3,9 +3,8 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "group": "bacon",
   "ingredient": {
-    "item": "vanillaplus:bacon"
+    "item": "vanillaplus:salmon_slice"
   },
-  "result": "vanillaplus:cooked_bacon"
+  "result": "vanillaplus:cooked_salmon_slice"
 }

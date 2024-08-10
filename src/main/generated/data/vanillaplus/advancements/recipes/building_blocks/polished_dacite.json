@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dacite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vanillaplus:dacite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:polished_dacite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dacite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:polished_dacite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

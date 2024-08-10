@@ -140,7 +140,7 @@ public class ModBlocks {
             new MythrilBlasterBlock(FabricBlockSettings.create().nonOpaque()));
 
     public static final Block SMALL_CHEST = registerBlock("small_chest",
-            new SmallChestBlock(FabricBlockSettings.create().nonOpaque()));
+            new SmallChestBlock(FabricBlockSettings.copyOf(Blocks.CHEST).nonOpaque()));
 
     public static final Block PINE_SAPLING = registerBlock("pine_sapling",
             new SaplingBlock(new PineSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));

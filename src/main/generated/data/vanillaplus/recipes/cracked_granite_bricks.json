@@ -2,8 +2,7 @@
   "type": "minecraft:smelting",
   "category": "blocks",
   "cookingtime": 200,
-  "experience": 0.7,
-  "group": "cracked_granite_bricks",
+  "experience": 0.1,
   "ingredient": {
     "item": "vanillaplus:granite_bricks"
   },

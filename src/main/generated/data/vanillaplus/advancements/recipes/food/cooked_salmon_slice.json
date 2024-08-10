@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_salmon_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "vanillaplus:salmon_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillaplus:cooked_salmon_slice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_salmon_slice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillaplus:cooked_salmon_slice"
+    ]
+  },
+  "sends_telemetry_event": false
+}

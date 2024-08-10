@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "vanillaplus:fried_egg"
+    },
+    "X": {
+      "item": "minecraft:bread"
+    }
+  },
+  "pattern": [
+    " X ",
+    "###",
+    " X "
+  ],
+  "result": {
+    "item": "vanillaplus:egg_sandwich"
+  },
+  "show_notification": true
+}

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_granite_bricks": {
+    "has_mushroom": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vanillaplus:granite_bricks"
+              "minecraft:brown_mushroom"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cracked_granite_bricks_from_smelting_granite_bricks"
+        "recipe": "vanillaplus:cooked_mushroom"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_granite_bricks"
+      "has_mushroom"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cracked_granite_bricks_from_smelting_granite_bricks"
+      "vanillaplus:cooked_mushroom"
     ]
   },
   "sends_telemetry_event": false

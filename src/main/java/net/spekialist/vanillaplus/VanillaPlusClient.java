@@ -10,9 +10,7 @@ import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.spekialist.vanillaplus.block.ModBlocks;
 import net.spekialist.vanillaplus.entity.ModBoats;
-import net.spekialist.vanillaplus.screen.ImprovedSmelterScreen;
-import net.spekialist.vanillaplus.screen.ModScreenHandlers;
-import net.spekialist.vanillaplus.screen.StoveScreen;
+import net.spekialist.vanillaplus.screen.*;
 
 public class VanillaPlusClient implements ClientModInitializer {
     @Override
@@ -33,6 +31,7 @@ public class VanillaPlusClient implements ClientModInitializer {
 
         HandledScreens.register(ModScreenHandlers.IMPROVED_SMELTER_SCREEN_HANDLER, ImprovedSmelterScreen::new);
         HandledScreens.register(ModScreenHandlers.STOVE_SCREEN_HANDLER, StoveScreen::new);
+        HandledScreens.register(ModScreenHandlers.SMALL_CHEST_SCREEN_HANDLER, SmallChestScreen::new);
 
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks.PINE_SIGN_TEXTURE));
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks.PINE_HANGING_SIGN_TEXTURE));

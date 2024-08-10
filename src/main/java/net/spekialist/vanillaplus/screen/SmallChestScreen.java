@@ -9,11 +9,10 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.spekialist.vanillaplus.VanillaPlus;
 
-public class StoveScreen extends HandledScreen<StoveScreenHandler> {
-    private static final Identifier TEXTURE = new Identifier(VanillaPlus.MOD_ID, "textures/gui/stove_gui.png");
+public class SmallChestScreen extends HandledScreen<SmallChestScreenHandler> {
+    private static final Identifier TEXTURE = new Identifier(VanillaPlus.MOD_ID, "textures/gui/small_chest.png");
 
-
-    public StoveScreen(StoveScreenHandler handler, PlayerInventory inventory, Text title) {
+    public SmallChestScreen(SmallChestScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
 
@@ -30,16 +29,7 @@ public class StoveScreen extends HandledScreen<StoveScreenHandler> {
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
-
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
-
-        if (handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 80, y + 34, 176, 14, handler.getScaledProgress(), 16);
-        }
-
-        if (handler.hasFuel()) {
-            context.drawTexture(TEXTURE, x + 45, y + 36 + 14 - handler.getScaledFuelProgress(), 176, 14 - handler.getScaledFuelProgress(), 14, handler.getScaledFuelProgress());
-        }
     }
 
     @Override

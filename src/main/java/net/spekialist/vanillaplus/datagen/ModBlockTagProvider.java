@@ -73,7 +73,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PINE_SIGN)
                 .add(ModBlocks.WALL_PINE_SIGN)
                 .add(ModBlocks.HANGING_PINE_SIGN)
-                .add(ModBlocks.WALL_HANGING_PINE_SIGN);
+                .add(ModBlocks.WALL_HANGING_PINE_SIGN)
+                .add(ModBlocks.SMALL_CHEST);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.RUBY_ORE)
@@ -82,6 +83,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.PINE_PLANKS);
+
+        /*getOrCreateTagBuilder(BlockTags.LOGS)
+                .add(ModBlocks.PINE_LOG)
+                .add(ModBlocks.STRIPPED_PINE_LOG)
+                .add(ModBlocks.PINE_WOOD)
+                .add(ModBlocks.STRIPPED_PINE_WOOD);*/
 
         getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(ModBlocks.PINE_FENCE);

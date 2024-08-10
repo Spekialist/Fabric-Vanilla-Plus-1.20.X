@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_andesite_bricks": {
+    "has_salmon_slice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "vanillaplus:andesite_bricks"
+              "vanillaplus:salmon_slice"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cracked_andesite_bricks_from_smelting_andesite_bricks"
+        "recipe": "minecraft:cooked_salmon_slice_from_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_andesite_bricks"
+      "has_salmon_slice"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cracked_andesite_bricks_from_smelting_andesite_bricks"
+      "minecraft:cooked_salmon_slice_from_smoking"
     ]
   },
   "sends_telemetry_event": false

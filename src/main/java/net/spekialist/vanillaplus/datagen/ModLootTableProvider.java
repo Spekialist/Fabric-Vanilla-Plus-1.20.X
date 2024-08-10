@@ -105,6 +105,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.IMPROVED_SMELTER);
         addDrop(ModBlocks.STOVE);
+        addDrop(ModBlocks.SMALL_CHEST);
     }
 
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item) {

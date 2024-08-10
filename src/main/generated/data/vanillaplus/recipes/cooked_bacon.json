@@ -3,9 +3,8 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "group": "mushroom",
   "ingredient": {
-    "item": "minecraft:brown_mushroom"
+    "item": "vanillaplus:bacon"
   },
-  "result": "vanillaplus:cooked_mushroom"
+  "result": "vanillaplus:cooked_bacon"
 }

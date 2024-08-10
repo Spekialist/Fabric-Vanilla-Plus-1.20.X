@@ -2,28 +2,26 @@ package net.spekialist.vanillaplus.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.predicate.NumberRange;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 import net.spekialist.vanillaplus.block.ModBlocks;
 import net.spekialist.vanillaplus.item.ModItems;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
     private static final List<ItemConvertible> RUBY_SMELTABLES = List.of(ModBlocks.RUBY_ORE, ModBlocks.DEEPSLATE_RUBY_ORE);
-    private static final List<ItemConvertible> DIORITE_SMELTABLES = List.of(ModBlocks.DIORITE_BRICKS);
-    private static final List<ItemConvertible> ANDESITE_SMELTABLES = List.of(ModBlocks.ANDESITE_BRICKS);
-    private static final List<ItemConvertible> GRANITE_SMELTABLES = List.of(ModBlocks.GRANITE_BRICKS);
-    private static final List<ItemConvertible> MUSHROOM_SMELTABLES = List.of(Items.BROWN_MUSHROOM);
-    private static final List<ItemConvertible> EGG_SMELTABLES = List.of(Items.EGG);
-    private static final List<ItemConvertible> BACON_SMELTABLES = List.of(ModItems.BACON);
 
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -33,20 +31,35 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     public void generate(RecipeExporter exporter) {
         offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
                 0.7f, 200, "ruby");
-        offerSmelting(exporter, DIORITE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_DIORITE_BRICKS,
-                0.7f, 200, "cracked_diorite_bricks");
-        offerSmelting(exporter, ANDESITE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_ANDESITE_BRICKS,
-                0.7f, 200, "cracked_andesite_bricks");
-        offerSmelting(exporter, GRANITE_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_GRANITE_BRICKS,
-                0.7f, 200, "cracked_granite_bricks");
-        offerSmelting(exporter, MUSHROOM_SMELTABLES, RecipeCategory.FOOD, ModItems.COOKED_MUSHROOM,
-                0.35f, 200, "mushroom");
-        offerSmelting(exporter, EGG_SMELTABLES, RecipeCategory.FOOD, ModItems.FRIED_EGG,
-                0.35f, 200, "egg");
-        offerSmelting(exporter, BACON_SMELTABLES, RecipeCategory.FOOD, ModItems.COOKED_BACON,
-                0.35f, 200, "bacon");
         offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
                 0.7f, 100, "ruby");
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD, ModItems.FRIED_EGG, 0.35f, 200).criterion("has_egg", VanillaRecipeProvider.conditionsFromItem(Items.EGG)).offerTo(exporter);
+        offerFoodCookingRecipe(exporter, "smoking", RecipeSerializer.SMOKING, 100, Items.EGG, ModItems.FRIED_EGG, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.BROWN_MUSHROOM), RecipeCategory.FOOD, ModItems.COOKED_MUSHROOM, 0.35f, 200).criterion("has_mushroom", VanillaRecipeProvider.conditionsFromItem(Items.BROWN_MUSHROOM)).offerTo(exporter);
+        offerFoodCookingRecipe(exporter, "smoking", RecipeSerializer.SMOKING, 100, Items.BROWN_MUSHROOM, ModItems.COOKED_MUSHROOM, 0.35f);
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, Items.BROWN_MUSHROOM, ModItems.COOKED_MUSHROOM, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.BACON), RecipeCategory.FOOD, ModItems.COOKED_BACON, 0.35f, 200).criterion("has_bacon", VanillaRecipeProvider.conditionsFromItem(ModItems.BACON)).offerTo(exporter);
+        offerFoodCookingRecipe(exporter, "smoking", RecipeSerializer.SMOKING, 100, ModItems.BACON, ModItems.COOKED_BACON, 0.35f);
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, ModItems.BACON, ModItems.COOKED_BACON, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.COD_SLICE), RecipeCategory.FOOD, ModItems.COOKED_COD_SLICE, 0.35f, 200).criterion("has_cod_slice", VanillaRecipeProvider.conditionsFromItem(ModItems.COD_SLICE)).offerTo(exporter);
+        offerFoodCookingRecipe(exporter, "smoking", RecipeSerializer.SMOKING, 100, ModItems.COD_SLICE, ModItems.COOKED_COD_SLICE, 0.35f);
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, ModItems.COD_SLICE, ModItems.COOKED_COD_SLICE, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.SALMON_SLICE), RecipeCategory.FOOD, ModItems.COOKED_SALMON_SLICE, 0.35f, 200).criterion("has_salmon_slice", VanillaRecipeProvider.conditionsFromItem(ModItems.SALMON_SLICE)).offerTo(exporter);
+        offerFoodCookingRecipe(exporter, "smoking", RecipeSerializer.SMOKING, 100, ModItems.SALMON_SLICE, ModItems.COOKED_SALMON_SLICE, 0.35f);
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, ModItems.SALMON_SLICE, ModItems.COOKED_SALMON_SLICE, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.MINCED_BEEF), RecipeCategory.FOOD, ModItems.BEEF_PATTY, 0.35f, 200).criterion("has_minced_beef", VanillaRecipeProvider.conditionsFromItem(ModItems.MINCED_BEEF)).offerTo(exporter);
+        offerFoodCookingRecipe(exporter, "smoking", RecipeSerializer.SMOKING, 100, ModItems.MINCED_BEEF, ModItems.BEEF_PATTY, 0.35f);
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, ModItems.MINCED_BEEF, ModItems.BEEF_PATTY, 0.35f);
+
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.DIORITE_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_DIORITE_BRICKS.asItem(), 0.1f, 200).criterion("has_diorite_bricks", VanillaRecipeProvider.conditionsFromItem(ModBlocks.DIORITE_BRICKS)).offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.ANDESITE_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_ANDESITE_BRICKS.asItem(), 0.1f, 200).criterion("has_andesite_bricks", VanillaRecipeProvider.conditionsFromItem(ModBlocks.ANDESITE_BRICKS)).offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModBlocks.GRANITE_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_GRANITE_BRICKS.asItem(), 0.1f, 200).criterion("has_granite_bricks", VanillaRecipeProvider.conditionsFromItem(ModBlocks.GRANITE_BRICKS)).offerTo(exporter);
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.RUBY, RecipeCategory.DECORATIONS, ModBlocks.RUBY_BLOCK);
 
@@ -56,6 +69,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.AMETHYST_SHARD)
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.BIG_AMETHYST)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.SMALL_CHEST)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern(" # ")
+                .input('#', ItemTags.PLANKS)
+                .criterion("has_lots_of_items", Criteria.INVENTORY_CHANGED.create(new InventoryChangedCriterion.Conditions(Optional.empty(), NumberRange.IntRange.atLeast(10), NumberRange.IntRange.ANY, NumberRange.IntRange.ANY, List.of())))
+                .offerTo(exporter);
 
         createStairsRecipe(ModBlocks.CALCITE_STAIRS, Ingredient.ofItems(Blocks.CALCITE))
                 .criterion(hasItem(Blocks.CALCITE), conditionsFromItem(Blocks.CALCITE))
@@ -212,6 +233,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_WALL, Blocks.POLISHED_GRANITE);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_GRANITE_BRICK_WALL, ModBlocks.MOSSY_GRANITE_BRICKS);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_DACITE, 4)
+                .pattern("##")
+                .pattern("##")
+                .input('#', ModBlocks.DACITE)
+                .criterion(hasItem(ModBlocks.DACITE), conditionsFromItem(ModBlocks.DACITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.POLISHED_DACITE)));
+
         offerShapelessRecipe(exporter, ModBlocks.PINE_PLANKS, ModBlocks.PINE_LOG,"pine_planks", 4);
         offerShapelessRecipe(exporter, ModBlocks.PINE_PLANKS, ModBlocks.PINE_WOOD,"pine_planks", 4);
         offerShapelessRecipe(exporter, ModBlocks.PINE_PLANKS, ModBlocks.STRIPPED_PINE_LOG,"pine_planks", 4);
@@ -301,6 +329,33 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.STEEL_HOE)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.STEEL_HELMET)
+                .pattern("###")
+                .pattern("# #")
+                .input('#', ModItems.STEEL_INGOT)
+                .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.STEEL_HELMET)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.STEEL_CHESTPLATE)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .input('#', ModItems.STEEL_INGOT)
+                .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.STEEL_CHESTPLATE)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.STEEL_LEGGINGS)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .input('#', ModItems.STEEL_INGOT)
+                .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.STEEL_LEGGINGS)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.STEEL_BOOTS)
+                .pattern("# #")
+                .pattern("# #")
+                .input('#', ModItems.STEEL_INGOT)
+                .criterion(hasItem(ModItems.STEEL_INGOT), conditionsFromItem(ModItems.STEEL_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.STEEL_BOOTS)));
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.SWEET_BERRY_COOKIE, 8)
                 .pattern("#X#")
                 .input('#', Items.WHEAT)
@@ -317,6 +372,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.HONEY_BOTTLE), conditionsFromItem(Items.HONEY_BOTTLE))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.CARAMEL)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.CABBAGE_LEAF, 7)
+                .input(ModItems.CABBAGE)
+                .criterion(hasItem(ModItems.CABBAGE), conditionsFromItem(ModItems.CABBAGE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.CABBAGE_LEAF)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BACON_AND_EGGS)
                 .input(ModItems.COOKED_BACON, 2)
                 .input(ModItems.FRIED_EGG, 2)
@@ -359,6 +419,26 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.TOMATO), conditionsFromItem(ModItems.TOMATO))
                 .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TOMATO_SAUCE)));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.VEGETABLE_SOUP)
+                .input(ModItems.TOMATO)
+                .input(ModItems.CABBAGE_LEAF)
+                .input(Items.CARROT)
+                .input(Items.POTATO)
+                .input(Items.BOWL)
+                .criterion(hasItem(ModItems.TOMATO), conditionsFromItem(ModItems.TOMATO))
+                .criterion(hasItem(ModItems.CABBAGE_LEAF), conditionsFromItem(ModItems.CABBAGE_LEAF))
+                .criterion(hasItem(Items.CARROT), conditionsFromItem(Items.CARROT))
+                .criterion(hasItem(Items.POTATO), conditionsFromItem(Items.POTATO))
+                .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.VEGETABLE_SOUP)));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BEETROOT_SALAD)
+                .input(Items.BEETROOT, 3)
+                .input(ModItems.CABBAGE_LEAF, 3)
+                .input(Items.BOWL)
+                .criterion(hasItem(Items.BEETROOT), conditionsFromItem(Items.BEETROOT))
+                .criterion(hasItem(ModItems.CABBAGE_LEAF), conditionsFromItem(ModItems.CABBAGE_LEAF))
+                .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BEETROOT_SALAD)));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.GRILLED_SALMON)
                 .input(ModItems.COOKED_SALMON_SLICE)
                 .input(Items.SWEET_BERRIES)
@@ -369,7 +449,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.CABBAGE_LEAF), conditionsFromItem(ModItems.CABBAGE_LEAF))
                 .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.GRILLED_SALMON)));
-
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.BACON_SANDWICH)
                 .pattern(" X ")
                 .pattern("#B%")
@@ -383,6 +462,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.COOKED_BACON), conditionsFromItem(ModItems.COOKED_BACON))
                 .criterion(hasItem(ModItems.CABBAGE_LEAF), conditionsFromItem(ModItems.CABBAGE_LEAF))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.BACON_SANDWICH)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.EGG_SANDWICH)
+                .pattern(" X ")
+                .pattern("###")
+                .pattern(" X ")
+                .input('X', Items.BREAD)
+                .input('#', ModItems.FRIED_EGG)
+                .criterion(hasItem(Items.BREAD), conditionsFromItem(Items.BREAD))
+                .criterion(hasItem(ModItems.FRIED_EGG), conditionsFromItem(ModItems.FRIED_EGG))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.EGG_SANDWICH)));
 
     }
 }

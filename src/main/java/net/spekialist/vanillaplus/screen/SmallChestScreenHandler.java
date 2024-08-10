@@ -6,66 +6,41 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.screen.ArrayPropertyDelegate;
-import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
-import net.spekialist.vanillaplus.block.entity.StoveBlockEntity;
-import net.spekialist.vanillaplus.screen.slot.ModFuelSlot;
-import net.spekialist.vanillaplus.screen.slot.ModOutputSlot;
+import net.spekialist.vanillaplus.block.entity.SmallChestBlockEntity;
 
-public class StoveScreenHandler extends ScreenHandler {
+public class SmallChestScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    private final PropertyDelegate propertyDelegate;
-    private final StoveBlockEntity blockEntity;
+    public final PropertyDelegate propertyDelegate;
+    private final SmallChestBlockEntity blockEntity;
 
-    public StoveScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+    public SmallChestScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(4));
+                new ArrayPropertyDelegate(15));
     }
 
-    public StoveScreenHandler(int syncId, PlayerInventory playerInventory,
+    public SmallChestScreenHandler(int syncId, PlayerInventory playerInventory,
                               BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
-        super(ModScreenHandlers.STOVE_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) blockEntity), 4);
+        super(ModScreenHandlers.SMALL_CHEST_SCREEN_HANDLER, syncId);
+        checkSize(((Inventory) blockEntity), 15);
         this.inventory = ((Inventory) blockEntity);
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
-        this.blockEntity = ((StoveBlockEntity) blockEntity);
+        this.blockEntity = ((SmallChestBlockEntity) blockEntity);
 
-        this.addSlot(new Slot(inventory, 0, 32, 17));
-        this.addSlot(new Slot(inventory, 1, 56, 17));
-        this.addSlot(new ModFuelSlot(inventory, 2, 44, 53));
-        this.addSlot(new ModOutputSlot(inventory, 3, 116, 35));
+        int l;
+        int k;
+        for (k = 0; k < 3; ++k) {
+            for (l = 0; l < 5; ++l) {
+                this.addSlot(new Slot(inventory, l + k * 5, 44 + l * 18, 18 + k * 18));
+            }
+        }
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
 
         addProperties(arrayPropertyDelegate);
-    }
-
-    public boolean isCrafting() {
-        return propertyDelegate.get(0) > 0;
-    }
-
-    public boolean hasFuel() {
-        return propertyDelegate.get(2) > 0;
-    }
-
-    public int getScaledProgress() {
-        int progress = this.propertyDelegate.get(0);
-        int maxProgress = this.propertyDelegate.get(1);
-        int progressArrowSize = 26;
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
-    }
-
-    public int getScaledFuelProgress() {
-        int fuelProgress = this.propertyDelegate.get(2);
-        int maxFuelProgress = this.propertyDelegate.get(3);
-        int fuelProgressSize = 16;
-
-        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }
 
     @Override
@@ -110,5 +85,11 @@ public class StoveScreenHandler extends ScreenHandler {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
+    }
+
+    @Override
+    public void onClosed(PlayerEntity player) {
+        super.onClosed(player);
+        this.inventory.onClose(player);
     }
 }

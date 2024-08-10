@@ -16,6 +16,10 @@ public class ModScreenHandlers {
             Registry.register(Registries.SCREEN_HANDLER, new Identifier(VanillaPlus.MOD_ID, "stove"),
                     new ExtendedScreenHandlerType<>(StoveScreenHandler::new));
 
+    public static final ScreenHandlerType<SmallChestScreenHandler> SMALL_CHEST_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, new Identifier(VanillaPlus.MOD_ID, "small_chest"),
+                    new ExtendedScreenHandlerType<>(SmallChestScreenHandler::new));
+
     public static void registerScreenHandlers() {
         VanillaPlus.LOGGER.info("Registering Screen Handlers for " + VanillaPlus.MOD_ID);
     }
