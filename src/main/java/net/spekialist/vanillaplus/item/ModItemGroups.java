@@ -14,7 +14,7 @@ public class ModItemGroups {
 
     public static final ItemGroup VP_BUILDING_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(VanillaPlus.MOD_ID, "vp_building_blocks"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vp_building_blocks"))
+            FabricItemGroup.builder().displayName(Text.translatable("item group.vp_building_blocks"))
                     .icon(() -> new ItemStack(ModBlocks.DIORITE_BRICKS)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.CALCITE_STAIRS);
                         entries.add(ModBlocks.CALCITE_SLAB);
@@ -71,9 +71,83 @@ public class ModItemGroups {
 
                     }).build());
 
+    public static final ItemGroup VP_COLOURED_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(VanillaPlus.MOD_ID, "vp_coloured_blocks"),
+            FabricItemGroup.builder().displayName(Text.translatable("item group.vp_coloured_blocks"))
+                    .icon(() -> new ItemStack(ModBlocks.BLUE_CONCRETE_STAIRS)).entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.WHITE_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.WHITE_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.GRAY_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.GRAY_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.BLACK_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.BLACK_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.BROWN_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.BROWN_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.RED_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.RED_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.ORANGE_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.ORANGE_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.YELLOW_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.YELLOW_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.LIME_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.LIME_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.GREEN_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.GREEN_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.CYAN_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.CYAN_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.BLUE_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.BLUE_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.PURPLE_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.PURPLE_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.MAGENTA_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.MAGENTA_TERRACOTTA_SLAB);
+                        entries.add(ModBlocks.PINK_TERRACOTTA_STAIRS);
+                        entries.add(ModBlocks.PINK_TERRACOTTA_SLAB);
+
+                        entries.add(ModBlocks.WHITE_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.WHITE_CONCRETE_SLAB);
+                        entries.add(ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.LIGHT_GRAY_CONCRETE_SLAB);
+                        entries.add(ModBlocks.GRAY_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.GRAY_CONCRETE_SLAB);
+                        entries.add(ModBlocks.BLACK_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.BLACK_CONCRETE_SLAB);
+                        entries.add(ModBlocks.BROWN_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.BROWN_CONCRETE_SLAB);
+                        entries.add(ModBlocks.RED_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.RED_CONCRETE_SLAB);
+                        entries.add(ModBlocks.ORANGE_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.ORANGE_CONCRETE_SLAB);
+                        entries.add(ModBlocks.YELLOW_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.YELLOW_CONCRETE_SLAB);
+                        entries.add(ModBlocks.LIME_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.LIME_CONCRETE_SLAB);
+                        entries.add(ModBlocks.GREEN_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.GREEN_CONCRETE_SLAB);
+                        entries.add(ModBlocks.CYAN_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.CYAN_CONCRETE_SLAB);
+                        entries.add(ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.LIGHT_BLUE_CONCRETE_SLAB);
+                        entries.add(ModBlocks.BLUE_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.BLUE_CONCRETE_SLAB);
+                        entries.add(ModBlocks.PURPLE_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.PURPLE_CONCRETE_SLAB);
+                        entries.add(ModBlocks.MAGENTA_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.MAGENTA_CONCRETE_SLAB);
+                        entries.add(ModBlocks.PINK_CONCRETE_STAIRS);
+                        entries.add(ModBlocks.PINK_CONCRETE_SLAB);
+
+                    }).build());
+
     public static final ItemGroup VP_FOOD_AND_DRINKS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(VanillaPlus.MOD_ID, "vp_food_and_drinks"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vp_food_and_drinks"))
+            FabricItemGroup.builder().displayName(Text.translatable("item group.vp_food_and_drinks"))
                     .icon(() -> new ItemStack(ModItems.CHEESE)).entries((displayContext, entries) -> {
                         entries.add(ModItems.TOMATO);
                         entries.add(ModItems.CORN);
@@ -156,7 +230,7 @@ public class ModItemGroups {
 
     public static final ItemGroup VP_NATURAL_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(VanillaPlus.MOD_ID, "vp_natural_blocks"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vp_natural_blocks"))
+            FabricItemGroup.builder().displayName(Text.translatable("item group.vp_natural_blocks"))
                     .icon(() -> new ItemStack(ModBlocks.RUBY_ORE)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.RUBY_ORE);
                         entries.add(ModBlocks.DEEPSLATE_RUBY_ORE);
@@ -169,7 +243,7 @@ public class ModItemGroups {
 
     public static final ItemGroup VP_INGREDIENTS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(VanillaPlus.MOD_ID, "vp_ingredients"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vp_ingredients"))
+            FabricItemGroup.builder().displayName(Text.translatable("item group.vp_ingredients"))
                     .icon(() -> new ItemStack(ModItems.BIG_AMETHYST)).entries((displayContext, entries) -> {
                         entries.add(ModItems.BIG_AMETHYST);
                         entries.add(ModItems.RUBY);
@@ -179,7 +253,7 @@ public class ModItemGroups {
 
     public static final ItemGroup VP_TOOLS_AND_UTILITIES_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(VanillaPlus.MOD_ID, "vp_tools_and_utilities"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vp_tools_and_utilities"))
+            FabricItemGroup.builder().displayName(Text.translatable("item group.vp_tools_and_utilities"))
                     .icon(() -> new ItemStack(ModItems.STEEL_PICKAXE)).entries((displayContext, entries) -> {
                         entries.add(ModItems.STEEL_SHOVEL);
                         entries.add(ModItems.STEEL_PICKAXE);
@@ -193,7 +267,7 @@ public class ModItemGroups {
 
     public static final ItemGroup VP_COMBAT_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(VanillaPlus.MOD_ID, "vp_combat"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vp_combat"))
+            FabricItemGroup.builder().displayName(Text.translatable("item group.vp_combat"))
                     .icon(() -> new ItemStack(ModItems.STEEL_SWORD)).entries((displayContext, entries) -> {
                         entries.add(ModItems.STEEL_SWORD);
                         entries.add(ModItems.STEEL_HELMET);
@@ -205,7 +279,7 @@ public class ModItemGroups {
 
     public static final ItemGroup VP_FUNCTIONAL_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(VanillaPlus.MOD_ID, "vp_functional_blocks"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.vp_functional_blocks"))
+            FabricItemGroup.builder().displayName(Text.translatable("item group.vp_functional_blocks"))
                     .icon(() -> new ItemStack(ModItems.PINE_SIGN)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.IMPROVED_SMELTER);
                         entries.add(ModBlocks.STOVE);
